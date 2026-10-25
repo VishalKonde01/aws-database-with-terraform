@@ -3,106 +3,173 @@
 
 Provisioning and managing AWS database services using **Terraform (Infrastructure as Code)**.
 
+This project demonstrates how to automate AWS database infrastructure, covering both relational and NoSQL databases through Terraform.
+
 ## 🚀 Project Overview
 
-This repository contains my hands-on implementation of AWS database services using Terraform, focusing on automated provisioning, security, and infrastructure management.
+The repository includes two AWS database services:
+
+- **Amazon RDS for PostgreSQL** — Relational database provisioned using Terraform and connected through pgAdmin 4.
+- **Amazon DynamoDB** — NoSQL database provisioned using Terraform.
+
+The objective is to practice infrastructure automation, database provisioning, and secure cloud resource management.
 
 ## 🛠️ Technologies Used
 
-- AWS RDS (PostgreSQL)
-- Amazon DynamoDB
+- Amazon Web Services (AWS)
 - Terraform
-- Git and GitHub
+- Amazon RDS for PostgreSQL
+- Amazon DynamoDB
 - pgAdmin 4
+- Git and GitHub
+
+## 🏗️ Architecture Overview
+
+```text
+                 Terraform
+                     |
+           AWS Infrastructure
+                     |
+          +----------+----------+
+          |                     |
+          v                     v
+    Amazon RDS              Amazon DynamoDB
+    PostgreSQL                NoSQL Database
+          |
+          v
+       pgAdmin 4
+          |
+          v
+    SQL Operations
+```
 
 ## 📂 Project Structure
 
 ```text
-aws-databases-with-terraform/
+aws-database-with-terraform/
+|
 ├── rds-postgresql/
+|   └── Terraform configuration files
+|
 ├── dynamodb/
+|   └── Terraform configuration files
+|
 ├── .gitignore
 └── README.md
 ```
 
-## 🗄️ 1. Amazon RDS PostgreSQL
+*Note: Update the folder names above if they differ from your actual repository structure.*
 
-**Status: Completed**
+## 🗄️ 1. Amazon RDS for PostgreSQL
 
-- Provisioned PostgreSQL on Amazon RDS using Terraform.
-- Connected to the database using pgAdmin 4.
-- Practiced database connectivity and SQL operations.
-- Managed infrastructure through Terraform configuration files.
+**Status: Implemented**
+
+Provisioned a PostgreSQL database on Amazon RDS using Terraform.
+
+### Key Activities
+
+- Created AWS RDS PostgreSQL infrastructure using Terraform.
+- Configured database settings through Terraform.
+- Connected to the RDS instance using pgAdmin 4.
+- Tested database connectivity and SQL operations.
+- Practiced managing cloud database infrastructure through code.
+
+### Connection Workflow
+
+```text
+Terraform Configuration
+          |
+          v
+Amazon RDS PostgreSQL
+          |
+          v
+       pgAdmin 4
+          |
+          v
+   Execute SQL Queries
+```
 
 ## ⚡ 2. Amazon DynamoDB
 
-**Status: Planned**
+**Status: Implemented**
 
-- Create DynamoDB tables using Terraform.
-- Configure partition keys and billing mode.
-- Explore encryption, backups, and access control.
+Provisioned an Amazon DynamoDB table using Terraform to explore AWS NoSQL database infrastructure.
 
-## 🔧 Terraform Commands
+### Key Activities
 
-Initialize Terraform:
+- Created DynamoDB resources using Terraform.
+- Practiced managing NoSQL database infrastructure as code.
+- Explored Terraform-based resource provisioning and lifecycle management.
+
+## 🔧 Terraform Workflow
+
+Run the following commands inside the relevant Terraform project directory.
+
+### Initialize Terraform
 
 ```bash
 terraform init
 ```
 
-Format configuration files:
+### Format Configuration Files
 
 ```bash
 terraform fmt
 ```
 
-Validate configuration:
+### Validate Configuration
 
 ```bash
 terraform validate
 ```
 
-Preview infrastructure changes:
+### Preview Infrastructure Changes
 
 ```bash
 terraform plan
 ```
 
-Deploy infrastructure:
+### Deploy Infrastructure
 
 ```bash
 terraform apply
 ```
 
-Destroy infrastructure when no longer needed:
+### Destroy Infrastructure
 
 ```bash
 terraform destroy
 ```
 
-> **Warning:** Review the execution plan before applying or destroying resources. Destroying database infrastructure may cause data loss.
+**Important:** Review the Terraform plan before applying or destroying resources. Destroying database infrastructure can cause data loss. Confirm that important data is backed up before removing resources.
 
 ## 🔐 Security Best Practices
 
-- Never commit AWS credentials or database passwords.
-- Exclude Terraform state files and sensitive `.tfvars` files from Git.
-- Restrict database access using security groups.
-- Prefer private database connectivity where practical.
-- Store Terraform state securely in a remote backend.
+- Never commit AWS access keys or database passwords.
+- Exclude Terraform state files and sensitive variable files from Git.
+- Restrict RDS access using security groups.
+- Prefer private database connectivity wherever practical.
+- Use IAM permissions following the principle of least privilege.
+- Store Terraform state securely in a protected remote backend.
+- Review resource configurations before applying changes.
 
 ## 📚 Learning Outcomes
 
-- AWS database provisioning using Terraform.
-- PostgreSQL connectivity and SQL operations.
+Through this project, I gained practical experience with:
+
+- AWS relational and NoSQL database services.
+- Terraform-based infrastructure provisioning.
+- PostgreSQL connectivity using pgAdmin 4.
+- AWS database resource management.
 - Infrastructure as Code best practices.
-- AWS security and access management.
-- Version control for infrastructure projects.
+- Git and GitHub for infrastructure version control.
 
 ## 🔮 Future Enhancements
 
-- Implement Amazon DynamoDB using Terraform.
-- Create reusable Terraform modules.
-- Configure database backups and monitoring.
+- Develop reusable Terraform modules for database resources.
+- Improve remote state management.
+- Explore database monitoring and backup strategies.
+- Strengthen IAM permissions and database security.
 - Integrate Terraform validation into CI/CD pipelines.
 
 ## 👨‍💻 Author
@@ -111,8 +178,10 @@ terraform destroy
 
 Aspiring DevOps / Cloud Engineer
 
-**Skills:** AWS | Terraform | Linux | Git | GitHub
+**Technologies:** AWS | Terraform | Linux | Git | GitHub
 
 ---
 
-⭐ Documenting my continuous learning journey in AWS, Terraform, and cloud infrastructure automation.
+⭐ This repository represents my hands-on learning journey in AWS database services and Infrastructure as Code.
+
+Feedback and suggestions are welcome!
